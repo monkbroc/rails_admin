@@ -9,7 +9,6 @@ require 'rails_admin/config/has_fields'
 require 'rails_admin/config/sections'
 require 'rails_admin/config/actions'
 
-
 module RailsAdmin
   module Config
     # Model specific configuration object.
@@ -56,7 +55,7 @@ module RailsAdmin
       end
 
       register_instance_option :label do
-        (@label ||= {})[::I18n.locale] ||= abstract_model.model.model_name.human(:default => abstract_model.model.model_name.demodulize.underscore.humanize)
+        (@label ||= {})[::I18n.locale] ||= abstract_model.model.model_name.human(:default => ActiveSupport::Inflector.demodulize(abstract_model.model.model_name).underscore.humanize)
       end
 
       register_instance_option :label_plural do

@@ -1,7 +1,8 @@
-source :rubygems
-
-gem 'rails', '~> 3.2'
-gem 'strong_parameters', '>= 0.1.6'
+gem 'rails', '~> 4.0.0.beta1'
+gem 'activeresource', git: 'git://github.com/rails/activeresource.git', require: 'active_resource'
+gem 'rails-observers', git: 'git://github.com/rails/rails-observers.git'
+gem 'protected_attributes', git: 'git://github.com/rails/protected_attributes.git'
+gem 'rack-cache', require: 'rack/cache'
 
 group :active_record do
   platforms :jruby do
@@ -30,14 +31,14 @@ group :active_record do
   end
 end
 
-group :mongoid do
-  gem 'mongoid', '>= 3.0'
-  gem 'mongoid-paperclip', '>= 0.0.8', :require => 'mongoid_paperclip'
-  gem 'carrierwave-mongoid', '>= 0.4', :require => 'carrierwave/mongoid'
-end
+# group :mongoid do
+#   gem 'mongoid', '>= 3.0'
+#   gem 'mongoid-paperclip', '>= 0.0.8', :require => 'mongoid_paperclip'
+#   gem 'carrierwave-mongoid', '>= 0.4', :require => 'carrierwave/mongoid'
+# end
 
 gem 'carrierwave', '>= 0.8'
-gem 'devise', '>= 2.2'
+gem 'devise', git: 'git://github.com/plataformatec/devise.git', branch: 'rails4'
 gem 'dragonfly', '>= 0.9'
 gem 'mini_magick', '>= 3.4'
 gem 'mlb', '>= 0.6'
@@ -47,8 +48,8 @@ gem 'rails_admin', :path => '../../'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2'
-  gem 'coffee-rails', '~> 3.2'
+  gem 'sass-rails',   '~> 4.0.0.beta1'
+  gem 'coffee-rails', '~> 4.0.0.beta1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'

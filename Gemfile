@@ -28,9 +28,9 @@ group :active_record do
 end
 
 group :mongoid do
-  gem 'mongoid', '>= 3.0'
+  gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
   gem 'mongoid-paperclip', '>= 0.0.8', :require => 'mongoid_paperclip'
-  gem 'carrierwave-mongoid', '>= 0.4', :require => 'carrierwave/mongoid'
+  gem 'carrierwave-mongoid', git: 'git://github.com/jnicklas/carrierwave-mongoid.git', branch: 'mongoid-4.0', :require => 'carrierwave/mongoid'
 end
 
 group :development do
@@ -43,8 +43,8 @@ group :test do
   gem 'capybara', '~> 1.1'
   gem 'carrierwave', '>= 0.8'
   gem 'coveralls', :require => false
-  gem 'database_cleaner', '>= 0.8'
-  gem 'devise', '>= 2.1'
+  gem 'database_cleaner', '>= 1.0.0.RC1'
+  gem 'devise', git: 'git://github.com/plataformatec/devise.git', branch: 'rails4'
   gem 'dragonfly', '>= 0.9'
   gem 'factory_girl', '>= 4.2'
   gem 'generator_spec', '>= 0.8'
@@ -53,8 +53,11 @@ group :test do
   gem 'paperclip', '>= 3.4'
   gem 'rspec-rails', '>= 2.11'
   gem 'simplecov', :require => false
-  gem 'strong_parameters', '>= 0.1.6'
   gem 'timecop', '>= 0.5'
+  gem 'activeresource', git: 'git://github.com/rails/activeresource.git', require: 'active_resource'
+  gem 'rails-observers', git: 'git://github.com/rails/rails-observers.git'
+  gem 'protected_attributes', git: 'git://github.com/rails/protected_attributes.git'
+  gem 'rack-cache', require: 'rack/cache'
 end
 
 gemspec
