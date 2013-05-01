@@ -6,6 +6,17 @@ $red: #C71C22;
 $blue: #3E78B3;
 $black: #000;
 
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
 body.rails_admin {
 
   .thumbnail {
